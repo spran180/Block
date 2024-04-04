@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Composite State Diagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .state {
+            display: inline-block;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #000;
+            background-color: #f0f0f0;
+        }
+
+        .composite-state {
+            display: inline-block;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #000;
+            background-color: #e0e0e0;
+        }
+
+        .arrow {
+            display: inline-block;
+            margin: 0 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="composite-state">
+    <div class="state">[*]</div>
+    <div class="arrow">&#8594;</div>
+    <div class="state">User</div>
+    <div class="arrow">&#8594;</div>
+    <div class="state">LoggedIn</div>
+    <div class="arrow">&#8594;</div>
+    <div class="state">Resume</div>
+</div>
+
+<br><br>
+
+<div class="arrow">User --> LoggedIn : login</div>
+<div class="arrow">User --> SignUp : sign up</div>
+<div class="arrow">User --> [*] : logout</div>
+<div class="arrow">LoggedIn --> Resume : view resume</div>
+<div class="arrow">LoggedIn --> Resume : edit resume</div>
+<div class="arrow">LoggedIn --> Resume : delete resume</div>
+<div class="arrow">Resume --> Skill : add skill</div>
+<div class="arrow">Resume --> Skill : delete skill</div>
+<div class="arrow">Resume --> Education : add education</div>
+<div class="arrow">Resume --> Education : delete education</div>
+<div class="arrow">Resume --> Experience : add experience</div>
+<div class="arrow">Resume --> Experience : delete experience</div>
+<div class="arrow">Resume --> [*] : save resume</div>
+<div class="arrow">SignUp --> User : create account</div>
+<div class="arrow">SignUp --> [*] : cancel</div>
+
+</body>
+</html>
